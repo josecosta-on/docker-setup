@@ -102,6 +102,9 @@ RUN \
 RUN mkdir -p $NVM_DIR
 RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # -----------------------------------------------------------------------------
 # Post-install
 # -----------------------------------------------------------------------------
