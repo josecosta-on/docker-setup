@@ -1,22 +1,24 @@
 #!/bin/bash
 
-if ! [ -f /code/.system-v1/.docker/setup.lock ]
+DIR=$1
+
+if ! [ -f /code/$DIR/.docker/setup.lock ]
 then
 echo "
 -----------------------------------------------------------------------------
 First time setup 
 -----------------------------------------------------------------------------"
 
-mkdir -p /code/.system-v1/.docker
+mkdir -p /code/$DIR/.docker
 usermod -a -G root nobody
-rm -rf /code/.system-v1/nvm \
-    && mv $NVM_DIR /code/.system-v1/ \
+rm -rf /code/$DIR/nvm \
+    && mv $NVM_DIR /code/$DIR/ \
     && rm -rf $NVM_DIR \
-    && ln -s /code/.system-v1/nvm $NVM_DIR \
+    && ln -s /code/$DIR/nvm $NVM_DIR \
     && echo $NVM_DIR \
-    && touch /code/.system-v1/.docker/setup.lock
+    && touch /code/$DIR/.docker/setup.lock
 
 else
-rm -rf $NVM_DIR && ln -s /code/.system-v1/nvm $NVM_DIR 
+rm -rf $NVM_DIR && ln -s /code/$DIR/nvm $NVM_DIR 
 exit 1
 fi
