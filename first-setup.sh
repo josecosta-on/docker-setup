@@ -17,7 +17,6 @@ rm -rf /code/$DIR/nvm \
     && ln -s /code/$DIR/nvm $NVM_DIR \
     && echo $NVM_DIR \
     && touch /code/$DIR/.docker/setup.lock \
-    && rm ~/.first_setup \
-    && rm -rf $NVM_DIR && ln -s /code/$DIR/nvm $NVM_DIR 
+    && rm ~/.first_setup
 exit 1
 fi
