@@ -10,4 +10,4 @@ rm -rf /code/${DOCKER_CODE} \
 && rm -rf /usr/local/${DOCKER_CODE} \
 && ln -s /code/${DOCKER_CODE} /usr/local/${DOCKER_CODE}
 echo /code/$DIR
-rm ${DOCKER_PATH}/.first_setup
+touch ${DOCKER_PATH}/.first_setup-completed
