@@ -1,3 +1,8 @@
+#!/bin/bash
+if test -f ${DOCKER_PATH}/.first_setup-completed; then
+  exit
+fi
+
 echo "
 -----------------------------------------------------------------------------
 First time setup 
